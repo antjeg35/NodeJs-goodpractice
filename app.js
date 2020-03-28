@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -11,7 +12,7 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI = 'mongodb+srv://dbAntoine:DwFny3r34m9nl43g@cluster0-9quvw.mongodb.net/shop';
+const MONGODB_URI = process.env.connectionMongoDB;
 
 const app = express();
 const store = new MongoDBStore({
