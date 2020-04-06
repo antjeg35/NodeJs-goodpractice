@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
       api_key:
-      process.env.connectionMail
+        process.env.connectionMail
     }
   })
 );
@@ -220,8 +220,8 @@ exports.postReset = (req, res, next) => {
       })
       .catch(err => {
         const error = new Error(err);
-      error.httpStatusCode = 500;
-      return next(error);
+        error.httpStatusCode = 500;
+        return next(error);
       });
   });
 };
