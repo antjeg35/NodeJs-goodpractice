@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 const bcrypt = require('bcryptjs');
-require('dotenv').config();
+require("dotenv").config();
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 const { validationResult } = require('express-validator/check');
